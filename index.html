@@ -1,20 +1,63 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Assignment 1</title>
-</head>
-<body>
-    <h1 align="center"> <b>  <u> WELCOME TO JSPIDERS </u> </b> </h1>
-    <h3 align="center">Training and development center</h3>
+    <title>Checking</title>
+    <script>
+        function changeStyles () {
+        var ymDivBar = document.getElementById("ymDivBar");
+        ymDivBar.style.bottom = "120px";
+        ymDivBar.style.position = "fixed";
+        ymDivBar.style.right = "0";
+        }
+        window.addEventListener('message', function(eventData) {
+        var data = eventData.data;
+        data = typeof data !='object' ? JSON.parse(data) : data;
+        if(data && data.event_code == "create-ui") {
+        var myTimeout = setTimeout(changeStyles, 0)
+        }
+        if(data && data.event_code=="ym-bot-closed")
+        {
+            var myTimeout = setTimeout(changeStyles, 0)
+        }
+        })
+        </script>
+        <script type="text/javascript">
+        window.ymConfig = { bot: "x1705632751996", host: 'https://r3.cloud.yellow.ai', view: 'compact', floatingIcon: false};
+        function botScript() {
+        var w = window,
+        ic = w.YellowMessenger;
+        if ("function" === typeof ic){
+        ic("reattach_activator");
+        ic("update", ymConfig);
+        }
+        else {
+        var d = document,
+        i = function () {
+        i.c(arguments);
+        };
+        i.q = [];
+        i.c = function (e) {
+        i.q.push(e);
+        };
+        w.YellowMessenger = i;
+        if(w.attachEvent) {
+        w.attachEvent("onload", l)
+        } else {
+        window.addEventListener('load', l);
+        w.addEventListener("load", l, !1)
+        }
+        }
+        function l() {
+        var e = d.createElement("script");
+        e.type = "text/javascript";
+        e.async = !0;
+        e.src = "https://cdn.yellowmessenger.com/plugin/widget-v2/latest/dist/main.min.js";
+        var t = d.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e, t);
+        }
+        }
+        botScript();
+        </script>
 
-    <hr type="dotted">
-
-    <div>
-        <a href="./home.html">HOME</a> | <a href="./course content.html">COURSE CONTENT</a> |
-         <a href="./contact us.html">CONTACT US</a> | <a href="./ABOUTUS.HTML">ABOUT US</a>
-    </div>
-
-    <img src="./gd.jpg" alt="">
-    
-</body>
+    <body>
+        <h1>Testing script</h1>
+    </body>
 </html>
